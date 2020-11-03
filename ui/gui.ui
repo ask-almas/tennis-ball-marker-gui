@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1130</width>
-    <height>700</height>
+    <height>725</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -69,7 +69,7 @@
       <x>10</x>
       <y>10</y>
       <width>280</width>
-      <height>520</height>
+      <height>560</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -93,7 +93,7 @@
        <x>0</x>
        <y>0</y>
        <width>278</width>
-       <height>518</height>
+       <height>558</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -154,25 +154,6 @@
      <double>1.000000000000000</double>
     </property>
    </widget>
-   <widget class="QPushButton" name="select_image_btn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>540</y>
-      <width>280</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="text">
-     <string>Browse an Image</string>
-    </property>
-   </widget>
    <widget class="QCheckBox" name="imu">
     <property name="geometry">
      <rect>
@@ -210,7 +191,7 @@
     </property>
     <layout class="QVBoxLayout" name="image_holder"/>
    </widget>
-   <widget class="QPushButton" name="load_btn">
+   <widget class="QPushButton" name="cam_pose_est_btn">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -219,14 +200,8 @@
       <height>30</height>
      </rect>
     </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
     <property name="text">
-     <string>Load coordinates</string>
+     <string>Estimate Camera Pose</string>
     </property>
    </widget>
   </widget>

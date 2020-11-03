@@ -1,6 +1,6 @@
 from PySide2 import QtWidgets
 from PySide2.QtGui import QPixmap, Qt
-from PySide2.QtWidgets import QMainWindow, QApplication, QFileDialog, QVBoxLayout, QWidget, QHBoxLayout
+from PySide2.QtWidgets import QMainWindow, QApplication, QFileDialog, QVBoxLayout, QWidget, QHBoxLayout, QAction
 
 from ui_components.assign_button import AssignButton
 from ui_components.delete_button import DeleteButton
@@ -24,9 +24,8 @@ class LabelTennisBallGUI(QMainWindow, Ui_MainWindow):
         self.edit_dialog = EditPositionGUI()
         self.buttons_list = {}
         self.add_buttons()
-        self.select_image_btn.clicked.connect(self.browse_image)
         self.calc_homography_btn.clicked.connect(self.calculate_homography)
-        self.load_btn.clicked.connect(self.load_coordinates)
+        self.cam_pose_est_btn.clicked.connect(self.estimate_camera_pose)
 
         self.viewer = PhotoViewer(self)
         self.btn_pix_info = QtWidgets.QToolButton(self)
@@ -49,7 +48,25 @@ class LabelTennisBallGUI(QMainWindow, Ui_MainWindow):
         self.tennis_balls = {}
         self.image_points = None
         self.road_points = None
+        self.calibration_file_path = None
         self.image_name = ""
+        self.create_menu()
+
+    def create_menu(self):
+        main_menu = self.menuBar()
+        open_menu = main_menu.addMenu("Open")
+
+        load_image_action = QAction("Image", self)
+        load_coordinates_action = QAction("Coordinates", self)
+        load_calibration_file_action = QAction("Calibration File", self)
+
+        load_image_action.triggered.connect(self.browse_image)
+        load_coordinates_action.triggered.connect(self.load_coordinates)
+        load_calibration_file_action.triggered.connect(self.load_calibration_file)
+
+        open_menu.addAction(load_image_action)
+        open_menu.addAction(load_coordinates_action)
+        open_menu.addAction(load_calibration_file_action)
 
     def add_buttons(self):
         for i in range(0, 5):
@@ -251,6 +268,14 @@ class LabelTennisBallGUI(QMainWindow, Ui_MainWindow):
             self.edit_pix_info.setText(f"Saved to output_csv/{self.image_name}.csv")
             self.image_points = np.array([image_points])
             self.road_points = np.array([road_points])
+
+    def load_calibration_file(self):
+        file = QFileDialog.getOpenFileName(self, 'Open File', 'c\\')
+        if file[0]:
+            self.calibration_file_path = file[0]
+
+    def estimate_camera_pose(self):
+        pass
 
 
 def main():
