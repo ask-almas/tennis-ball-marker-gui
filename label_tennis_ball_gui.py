@@ -117,7 +117,10 @@ class LabelTennisBallGUI(QMainWindow, Ui_MainWindow):
     def on_image_click(self, event):
         if self.viewer.dragMode() == QtWidgets.QGraphicsView.NoDrag:
             if self.image_name:
-                x, y = self.estimate_center(event.x(), event.y())
+                x, y = event.x(), event.y()
+                self.edit_pix_info.setText(f"Pixel position: {x}, {y}")
+                if self.region_growing.isChecked():
+                    x, y = self.estimate_center(x, y)
                 self.remove_temp_marker()
                 self.add_marker(x, y)
                 self.save_estimated_coordinates(x, y)
