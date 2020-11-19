@@ -23,13 +23,10 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>LabelGUI</string>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
-  </property>
-  <property name="locale">
-   <locale language="English" country="UnitedStates"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
@@ -38,9 +35,6 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <property name="locale">
-    <locale language="English" country="UnitedStates"/>
-   </property>
    <widget class="QPushButton" name="calc_homography_btn">
     <property name="enabled">
      <bool>true</bool>
@@ -48,8 +42,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>660</y>
-      <width>160</width>
+      <y>620</y>
+      <width>280</width>
       <height>30</height>
      </rect>
     </property>
@@ -116,9 +110,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>620</y>
-      <width>160</width>
+      <x>170</x>
+      <y>580</y>
+      <width>65</width>
       <height>30</height>
      </rect>
     </property>
@@ -138,9 +132,9 @@
    <widget class="QDoubleSpinBox" name="road_unit">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>620</y>
-      <width>110</width>
+      <x>240</x>
+      <y>580</y>
+      <width>50</width>
       <height>30</height>
      </rect>
     </property>
@@ -157,9 +151,9 @@
    <widget class="QCheckBox" name="imu">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>660</y>
-      <width>50</width>
+      <x>10</x>
+      <y>580</y>
+      <width>45</width>
       <height>30</height>
      </rect>
     </property>
@@ -170,8 +164,8 @@
    <widget class="QCheckBox" name="utm">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>660</y>
+      <x>60</x>
+      <y>580</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -195,13 +189,26 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>580</y>
+      <y>660</y>
       <width>280</width>
       <height>30</height>
      </rect>
     </property>
     <property name="text">
      <string>Estimate Camera Pose</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="region_growing">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>580</y>
+      <width>40</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>RG</string>
     </property>
    </widget>
   </widget>

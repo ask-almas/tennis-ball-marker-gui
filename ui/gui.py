@@ -9,7 +9,7 @@
 ################################################################################
 
 from PySide2.QtCore import (QCoreApplication, QDate, QDateTime, QMetaObject,
-                            QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QLocale)
+    QObject, QPoint, QRect, QSize, QTime, QUrl, Qt)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter,
     QPixmap, QRadialGradient)
@@ -29,16 +29,14 @@ class Ui_MainWindow(object):
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMouseTracking(True)
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
-        self.centralwidget.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.calc_homography_btn = QPushButton(self.centralwidget)
         self.calc_homography_btn.setObjectName(u"calc_homography_btn")
         self.calc_homography_btn.setEnabled(True)
-        self.calc_homography_btn.setGeometry(QRect(10, 660, 160, 30))
+        self.calc_homography_btn.setGeometry(QRect(10, 620, 280, 30))
         sizePolicy.setHeightForWidth(self.calc_homography_btn.sizePolicy().hasHeightForWidth())
         self.calc_homography_btn.setSizePolicy(sizePolicy)
         self.scrollArea = QScrollArea(self.centralwidget)
@@ -58,22 +56,22 @@ class Ui_MainWindow(object):
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setEnabled(False)
-        self.lineEdit.setGeometry(QRect(10, 620, 160, 30))
+        self.lineEdit.setGeometry(QRect(170, 580, 65, 30))
         sizePolicy.setHeightForWidth(self.lineEdit.sizePolicy().hasHeightForWidth())
         self.lineEdit.setSizePolicy(sizePolicy)
         self.lineEdit.setAlignment(Qt.AlignCenter)
         self.road_unit = QDoubleSpinBox(self.centralwidget)
         self.road_unit.setObjectName(u"road_unit")
-        self.road_unit.setGeometry(QRect(180, 620, 110, 30))
+        self.road_unit.setGeometry(QRect(240, 580, 50, 30))
         sizePolicy.setHeightForWidth(self.road_unit.sizePolicy().hasHeightForWidth())
         self.road_unit.setSizePolicy(sizePolicy)
         self.road_unit.setValue(1.000000000000000)
         self.imu = QCheckBox(self.centralwidget)
         self.imu.setObjectName(u"imu")
-        self.imu.setGeometry(QRect(180, 660, 50, 30))
+        self.imu.setGeometry(QRect(10, 580, 45, 30))
         self.utm = QCheckBox(self.centralwidget)
         self.utm.setObjectName(u"utm")
-        self.utm.setGeometry(QRect(240, 660, 50, 30))
+        self.utm.setGeometry(QRect(60, 580, 50, 30))
         self.verticalLayoutWidget = QWidget(self.centralwidget)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
         self.verticalLayoutWidget.setGeometry(QRect(300, 10, 821, 681))
@@ -82,7 +80,10 @@ class Ui_MainWindow(object):
         self.image_holder.setContentsMargins(0, 0, 0, 0)
         self.cam_pose_est_btn = QPushButton(self.centralwidget)
         self.cam_pose_est_btn.setObjectName(u"cam_pose_est_btn")
-        self.cam_pose_est_btn.setGeometry(QRect(10, 580, 280, 30))
+        self.cam_pose_est_btn.setGeometry(QRect(10, 660, 280, 30))
+        self.region_growing = QCheckBox(self.centralwidget)
+        self.region_growing.setObjectName(u"region_growing")
+        self.region_growing.setGeometry(QRect(115, 580, 40, 30))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -91,11 +92,12 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"LabelGUI", None))
         self.calc_homography_btn.setText(QCoreApplication.translate("MainWindow", u"Calculate Homography", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"Road Unit", None))
         self.imu.setText(QCoreApplication.translate("MainWindow", u"IMU", None))
         self.utm.setText(QCoreApplication.translate("MainWindow", u"UTM", None))
         self.cam_pose_est_btn.setText(QCoreApplication.translate("MainWindow", u"Estimate Camera Pose", None))
+        self.region_growing.setText(QCoreApplication.translate("MainWindow", u"RG", None))
     # retranslateUi
 
