@@ -110,7 +110,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>180</x>
       <y>580</y>
       <width>50</width>
       <height>30</height>
@@ -132,9 +132,9 @@
    <widget class="QDoubleSpinBox" name="road_unit">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>235</x>
       <y>580</y>
-      <width>60</width>
+      <width>55</width>
       <height>30</height>
      </rect>
     </property>
