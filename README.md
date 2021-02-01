@@ -1,13 +1,15 @@
-git clone https://github.com/ask-almas/tennis-ball-marker-gui.git
+## Homography Calculation app for Camera Calibration
 
-cd tennis-ball-marker-gui/
+`git clone https://github.com/ask-almas/tennis-ball-marker-gui.git`
 
-python3 -m venv venv
+`cd tennis-ball-marker-gui/`
 
-source venv/bin/activate
+`python3 -m venv venv`
 
-pip install -U pip
+`source venv/bin/activate`
 
-pip install -r requirements.txt
+`pip install -U pip`
 
-python label_tennis_ball_gui.py
+`pip install -r requirements.txt`
+
+`python label_tennis_ball_gui.py`
